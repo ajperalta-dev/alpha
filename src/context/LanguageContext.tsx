@@ -14,7 +14,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Navbar
     'nav.home': 'Inicio',
     'nav.services': 'Soluciones',
-    'nav.about': 'Equipo & Filosofía',
+    'nav.about': 'Nosotros',
     'nav.methodology': 'Metodología',
     'nav.calculator': 'Simulador ROI',
     'nav.cases': 'Casos de uso',
@@ -174,7 +174,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Navbar
     'nav.home': 'Home',
     'nav.services': 'Solutions',
-    'nav.about': 'Team & Philosophy',
+    'nav.about': 'About us',
     'nav.methodology': 'Methodology',
     'nav.calculator': 'ROI Simulator',
     'nav.cases': 'Use cases',

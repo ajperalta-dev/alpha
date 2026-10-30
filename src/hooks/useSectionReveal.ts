@@ -8,8 +8,9 @@ const sceneSelector = '#services, #cases, #methodology, #faq, #contact';
 const groupSelector = '.section-heading, .faq-intro, .contact-intro, .service-tools, .result-count, .service-card, .services-note, .case-selector, .case-showcase, .case-invitation, .method-steps, .method-detail, .method-footer, .faq-item, .contact-form-panel, .footer-main, .footer-bottom';
 
 /** A single owner for native-scroll reveals, ambient motion and their cleanup. */
-export function useSectionReveal() {
+export function useSectionReveal(enabled = true) {
   useEffect(() => {
+    if (!enabled) return;
     const site = document.querySelector<HTMLElement>('.alpha-site');
     if (!site) return;
     const revealed = new WeakSet<Element>();
@@ -125,5 +126,5 @@ export function useSectionReveal() {
       cancelAnimationFrame(frame);
       site.querySelector('.site-header')?.classList.remove('is-scrolled');
     };
-  }, []);
+  }, [enabled]);
 }

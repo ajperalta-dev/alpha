@@ -32,11 +32,12 @@ export function Navbar({ onOpenBooking }: { onOpenBooking: () => void }) {
     document.addEventListener('keydown', close);
     return () => document.removeEventListener('keydown', close);
   }, [open]);
-  const links = [['#services', 'nav.services'], ['#cases', 'nav.cases'], ['#methodology', 'nav.methodology'], ['#contact', 'nav.contact']];
+  const home = window.location.pathname === '/' ? '' : '/';
+  const links = [[`${home}#services`, 'nav.services'], [`${home}#cases`, 'nav.cases'], [`${home}#methodology`, 'nav.methodology'], ['/nosotros', 'nav.about'], [`${home}#contact`, 'nav.contact']];
   return <header className={`site-header${hidden && !open ? ' is-hidden' : ''}`} data-intro-reveal="nav">
     <div className="shell nav-row">
-      <a href="#hero" className="brand-home" aria-label={lang === 'es' ? 'ALPHA, inicio' : 'ALPHA, home'} onClick={() => setOpen(false)}><BrandLockup darkSurface /></a>
-      <nav className="desktop-nav" aria-label={lang === 'es' ? 'Navegación principal' : 'Main navigation'}>{links.map(([href, key]) => <a key={href} href={href}>{t(key)}</a>)}</nav>
+      <a href={`${home}#hero`} className="brand-home" aria-label={lang === 'es' ? 'ALPHA, inicio' : 'ALPHA, home'} onClick={() => setOpen(false)}><BrandLockup darkSurface /></a>
+      <nav className="desktop-nav" aria-label={lang === 'es' ? 'Navegación principal' : 'Main navigation'}>{links.map(([href, key]) => <a key={href} href={href} aria-current={href === "/nosotros" && home ? "page" : undefined}>{t(key)}</a>)}</nav>
       <div className="nav-actions">
         <button className="language-toggle" onClick={() => setLang(lang === 'es' ? 'en' : 'es')} aria-label={lang === 'es' ? 'Change language to English' : 'Cambiar idioma a español'}>{lang.toUpperCase()}</button>
         <button className="icon-button theme-toggle" onClick={toggleTheme} aria-label={isDark ? (lang === 'es' ? 'Usar tema claro' : 'Use light theme') : (lang === 'es' ? 'Usar tema oscuro' : 'Use dark theme')}>{isDark ? <Sun size={18} /> : <Moon size={18} />}</button>
@@ -45,7 +46,7 @@ export function Navbar({ onOpenBooking }: { onOpenBooking: () => void }) {
       </div>
     </div>
     {open && <nav id="mobile-navigation" className="mobile-nav shell" aria-label={lang === 'es' ? 'Navegación móvil' : 'Mobile navigation'}>
-      {links.map(([href, key]) => <a href={href} key={href} onClick={() => setOpen(false)}>{t(key)}<ArrowUpRight size={20} /></a>)}
+      {links.map(([href, key]) => <a href={href} key={href} aria-current={href === "/nosotros" && home ? "page" : undefined} onClick={() => setOpen(false)}>{t(key)}<ArrowUpRight size={20} /></a>)}
       <button className="button button-primary" onClick={() => { setOpen(false); onOpenBooking(); }}>{t('nav.bookCta')}<ArrowUpRight size={18} /></button>
     </nav>}
   </header>;

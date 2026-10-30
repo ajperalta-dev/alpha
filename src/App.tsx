@@ -15,9 +15,11 @@ import { BookingModal } from './components/booking/BookingModal';
 import { WhatsAppWidget } from './components/whatsapp/WhatsAppWidget';
 import { ChatbotWidget } from './components/chat/ChatbotWidget';
 import { useLanguage } from './context/language';
+import { AboutPage } from './components/about/AboutPage';
 
 export function AppContent() {
-  useSectionReveal();
+  const isAbout = window.location.pathname.replace(/\/$/, '') === '/nosotros';
+  useSectionReveal(!isAbout);
   const { lang } = useLanguage();
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [preselectedService, setPreselectedService] = useState('');
@@ -41,19 +43,21 @@ export function AppContent() {
 
   return (
     <div className="alpha-site">
-      <BrandIntro />
+      {!isAbout && <BrandIntro />}
       
       <Navbar onOpenBooking={() => handleOpenBooking()} />
 
       {/* Main Content Sections */}
       <a href="#main" className="skip-link">{lang === 'es' ? 'Saltar al contenido' : 'Skip to content'}</a>
       <main id="main">
+        {isAbout ? <AboutPage onOpenBooking={() => handleOpenBooking()} /> : <>
         <Hero onOpenBooking={() => handleOpenBooking()} />
         <ServicesSection onSelectServiceForBooking={(service) => handleOpenBooking(service)} />
         <CaseStudiesSection onOpenBooking={() => handleOpenBooking()} />
         <MethodologySection />
         <FaqSection />
         <ContactSection />
+        </>}
       </main>
 
       {/* Footer */}
