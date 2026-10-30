@@ -1,3 +1,4 @@
+import { SceneBackdrop, SceneHeading } from '../common/SceneElements';
 import { useState } from 'react';
 import { ArrowUpRight, BarChart3, Check, Compass, Cpu, Database, Factory, GraduationCap, Layers, Search, Server, Sparkles, X, type LucideIcon } from 'lucide-react';
 import { useLanguage } from '../../context/language';
@@ -24,8 +25,8 @@ export function ServicesSection({ onSelectServiceForBooking }: { onSelectService
     return matchesSearch && matchesFilter;
   });
   const filters: [Filter, string][] = [['all', t('services.filter.all')], ['foundational', t('services.filter.foundational')], ['advanced', t('services.filter.advanced')], ['industrial', t('services.filter.industrial')], ['advisory', es ? 'Consultoría y tutorías' : 'Consulting & tutoring']];
-  return <section id="services" className="section services-section"><div className="shell">
-    <div className="section-heading"><h2>{es ? 'Conectamos las piezas de tu transformación.' : 'Connecting the pieces of your transformation.'}</h2><p>{es ? 'Desde la arquitectura del dato hasta una fábrica conectada. Diseñamos soluciones de analítica, IA y automatización que se integran en tu negocio, con las personas y los procesos en el centro.' : 'From data architecture to a connected factory. We design analytics, AI and automation solutions that integrate into your business, with people and processes at the centre.'}</p></div>
+  return <section id="services" className="section services-section"><SceneBackdrop /><div className="shell">
+    <div className="section-heading"><SceneHeading>{es ? 'Conectamos las piezas de tu transformación.' : 'Connecting the pieces of your transformation.'}</SceneHeading><p>{es ? 'Desde la arquitectura del dato hasta una fábrica conectada. Diseñamos soluciones de analítica, IA y automatización que se integran en tu negocio, con las personas y los procesos en el centro.' : 'From data architecture to a connected factory. We design analytics, AI and automation solutions that integrate into your business, with people and processes at the centre.'}</p></div>
     <div className="service-tools">
       <div className="filter-list" role="group" aria-label={es ? 'Filtrar soluciones' : 'Filter solutions'}>{filters.map(([value, label]) => <button key={value} className="filter-button" aria-pressed={filter === value} onClick={() => setFilter(value)}>{label}</button>)}</div>
       <label className="search-field"><Search size={18} aria-hidden="true" /><span className="sr-only">{es ? 'Buscar soluciones' : 'Search solutions'}</span><input type="search" value={search} onChange={event => setSearch(event.target.value)} placeholder={es ? '¿Qué necesitas resolver?' : 'What do you need to solve?'} /></label>

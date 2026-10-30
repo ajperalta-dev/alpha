@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSectionReveal } from './hooks/useSectionReveal';
 import { FaqSection } from './components/common/FaqSection';
 import { LanguageProvider } from './context/LanguageContext';
 import { ThemeProvider } from './context/ThemeContext';
@@ -16,6 +17,7 @@ import { ChatbotWidget } from './components/chat/ChatbotWidget';
 import { useLanguage } from './context/language';
 
 export function AppContent() {
+  useSectionReveal();
   const { lang } = useLanguage();
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [preselectedService, setPreselectedService] = useState('');

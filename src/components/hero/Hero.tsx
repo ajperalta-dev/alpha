@@ -59,6 +59,7 @@ export function Hero({ onOpenBooking }: { onOpenBooking: () => void }) {
         </div>
       </div>
     </div>
+    <a className="hero-scroll-cue" href="#services" aria-label={es ? 'Descubrir soluciones' : 'Discover solutions'}><span>{es ? 'Descubre' : 'Discover'}</span><span className="hero-scroll-line" aria-hidden="true" /></a>
     <div className="shell hero-disciplines" data-intro-reveal="details">{disciplines.map(({ Icon, title, detail }) => <a href="#services" key={title}><Icon size={23} strokeWidth={1.4} /><span><strong>{title}</strong><small>{detail}</small></span><ArrowUpRight size={15} /></a>)}</div>
   </section>;
 }

@@ -1,3 +1,4 @@
+import { SceneBackdrop, SceneHeading } from '../common/SceneElements';
 import { useState, type FormEvent } from 'react';
 import { ArrowUpRight, Check, Clock, Copy, Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
 import { useLanguage } from '../../context/language';
@@ -19,8 +20,8 @@ export function ContactSection() {
     window.location.href = `mailto:alpha.digital.ia@gmail.com?subject=${encodeURIComponent(service)}&body=${encodeURIComponent(body)}`;
     setPrepared(true);
   };
-  return <section id="contact" className="section contact-section inverse"><div className="shell contact-layout">
-    <div className="contact-intro"><h2>{es ? 'Tu próxima evolución empieza aquí.' : 'Your next evolution starts here.'}</h2><p>{es ? 'Un proceso que necesita cambiar. Datos que todavía no conectan. Una idea de IA que quieres llevar a la práctica. Cuéntanos tu reto y diseñemos el primer paso.' : 'A process that needs to change. Data that isn’t connected yet. An AI idea you want to put into practice. Tell us your challenge and let’s design the first step.'}</p>
+  return <section id="contact" className="section contact-section inverse"><SceneBackdrop /><div className="shell contact-layout">
+    <div className="contact-intro"><SceneHeading>{es ? 'Tu próxima evolución empieza aquí.' : 'Your next evolution starts here.'}</SceneHeading><p>{es ? 'Un proceso que necesita cambiar. Datos que todavía no conectan. Una idea de IA que quieres llevar a la práctica. Cuéntanos tu reto y diseñemos el primer paso.' : 'A process that needs to change. Data that isn’t connected yet. An AI idea you want to put into practice. Tell us your challenge and let’s design the first step.'}</p>
       <div className="contact-channel"><Mail /><div><small>{es ? 'Escríbenos' : 'Email us'}</small><a href="mailto:alpha.digital.ia@gmail.com">alpha.digital.ia@gmail.com</a></div><button className="icon-button" onClick={() => copy('alpha.digital.ia@gmail.com')} aria-label={es ? 'Copiar correo electrónico' : 'Copy email address'}>{copied === 'alpha.digital.ia@gmail.com' ? <Check size={15} /> : <Copy size={15} />}</button></div>
       <div className="contact-channel"><Phone /><div><small>{es ? 'Llámanos' : 'Call us'}</small><a href="tel:+34641012046">+34 641 012 046</a></div><button className="icon-button" onClick={() => copy('+34641012046')} aria-label={es ? 'Copiar teléfono' : 'Copy phone number'}>{copied === '+34641012046' ? <Check size={15} /> : <Copy size={15} />}</button></div>
       <span className="sr-only" role="status">{copied ? (es ? 'Copiado al portapapeles' : 'Copied to clipboard') : ''}</span>

@@ -586,3 +586,49 @@ p { text-wrap: pretty; }
   .case-showcase-copy h3 { font-size:30px; margin-bottom:25px; }
   .case-narrative p { font-size:13px; }
 }
+
+/* Continuous ALPHA scenes. Content stays in normal document flow. */
+.alpha-site .section {
+  --paper:#000; --ink:#fff; --muted:rgba(255,255,255,.68);
+  --subtle:rgba(255,255,255,.5); --line:rgba(255,255,255,.2);
+  --wash:rgba(255,255,255,.045); --hover:rgba(255,255,255,.09);
+  position:relative; isolation:isolate; overflow:clip; min-height:90svh;
+  background:#000; color:#fff; border:0; border-radius:0; margin-inline:0;
+}
+.section > .shell { position:relative; }
+.scene-backdrop { position:absolute; inset:0; z-index:-1; overflow:clip; pointer-events:none; }
+.scene-depth { position:absolute; inset:-5% 0; background:radial-gradient(ellipse at 80% 45%,rgba(255,255,255,.1),transparent 52%); }
+.scene-depth::before { content:''; position:absolute; width:min(64vw,900px); aspect-ratio:1; top:12%; right:-15%; border:1px solid rgba(255,255,255,.08); border-radius:50%; box-shadow:0 0 0 75px rgba(255,255,255,.025),0 0 0 150px rgba(255,255,255,.015); transform:rotateX(55deg) rotate(-25deg); }
+.scene-backdrop::after { content:''; position:absolute; inset:0; background:linear-gradient(#000 0%,transparent 25%,transparent 70%,#000 100%); }
+.cases-section .scene-depth { background:radial-gradient(ellipse at 20% 55%,rgba(255,255,255,.13),transparent 58%); }
+.cases-section .scene-depth::before { right:auto; left:-20%; transform:rotateX(45deg) rotate(25deg); }
+.methodology-section .scene-depth { background:radial-gradient(ellipse at 75% 55%,rgba(255,255,255,.07),transparent 60%); }
+.faq-section .scene-depth::before { display:none; }
+.contact-section .scene-depth { background:radial-gradient(ellipse at 15% 80%,rgba(255,255,255,.12),transparent 60%); }
+.scene-line-mask { display:block; overflow:clip; padding-bottom:.13em; margin-bottom:-.13em; }
+.scene-line { display:block; }
+.cases-section .section-heading { grid-template-columns:1fr 1.2fr; }
+.cases-section .section-heading h2 { grid-column:2; grid-row:1; }
+.cases-section .section-heading > p { grid-column:1; grid-row:1; }
+.methodology-section > .shell { padding-top:clamp(0px,5svh,64px); }
+.section .service-card, .section .case-showcase-art, .section .method-detail { box-shadow:none; }
+.section .service-card { border-color:rgba(255,255,255,.12); }
+.site-header { transition:background .35s,backdrop-filter .35s,border-color .35s; }
+.site-header.is-scrolled { background:color-mix(in srgb,var(--paper) 80%,transparent); backdrop-filter:blur(14px); }
+.dark .site-header.is-scrolled { background:rgba(0,0,0,.65); }
+.hero-scroll-cue { display:flex; align-items:center; gap:14px; width:max-content; margin:0 auto 24px; color:rgba(255,255,255,.6); font-size:10px; letter-spacing:.12em; text-transform:uppercase; }
+.hero-scroll-line { display:block; position:relative; overflow:hidden; height:34px; width:1px; background:rgba(255,255,255,.18); }
+.hero-scroll-line::after { content:''; position:absolute; inset:0; background:#fff; animation:scroll-cue 2s ease-in-out infinite; }
+@keyframes scroll-cue { from { transform:translateY(-100%); } to { transform:translateY(100%); } }
+/* Stop the existing SVG loops while their scenes are away from the viewport. */
+.section:not(.scene-is-active) .is-playing * { animation-play-state:paused !important; }
+@media (max-width:767px) {
+  .scene-depth::before { width:100vw; box-shadow:none; }
+  .cases-section .section-heading { grid-template-columns:1fr; }
+  .cases-section .section-heading h2, .cases-section .section-heading > p { grid-column:auto; grid-row:auto; }
+  .alpha-site .section { min-height:90svh; }
+  .scene-line-mask { overflow:clip; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .hero-scroll-line::after { animation:none; }
+}

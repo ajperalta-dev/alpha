@@ -1,3 +1,4 @@
+import { SceneBackdrop, SceneHeading } from './SceneElements';
 import { ArrowUpRight, Plus } from 'lucide-react';
 import { useLanguage } from '../../context/language';
 export function FaqSection() {
@@ -16,5 +17,5 @@ export function FaqSection() {
     ['How is a session confirmed?', 'Complete the booking form with the service, preferred time and your email. The calendar checks availability before sending an invitation. If it cannot be confirmed, contact us by email or WhatsApp.'],
     ['How is pricing determined?', 'Pricing depends on scope, complexity and engagement format. We agree on goals and deliverables before preparing a proposal.'],
   ];
-  return <section id="faq" className="section faq-section"><div className="shell faq-layout"><div className="faq-intro"><h2>{es ? 'Hagamos fácil el primer paso.' : 'Let’s make the first step easy.'}</h2><p>{es ? 'Cada proyecto y cada persona parten de un lugar distinto. Estas respuestas te ayudarán a encontrar el tuyo.' : 'Every project and every person starts somewhere different. These answers will help you find your starting point.'}</p><a href="#contact" className="text-link">{es ? '¿Tienes otra pregunta?' : 'Have another question?'}<ArrowUpRight size={17} /></a></div><div className="faq-list">{items.map(([question, answer]) => <details className="faq-item" key={question}><summary>{question}<Plus size={19} aria-hidden="true" /></summary><p>{answer}</p></details>)}</div></div></section>;
+  return <section id="faq" className="section faq-section"><SceneBackdrop /><div className="shell faq-layout"><div className="faq-intro"><SceneHeading>{es ? 'Hagamos fácil el primer paso.' : 'Let’s make the first step easy.'}</SceneHeading><p>{es ? 'Cada proyecto y cada persona parten de un lugar distinto. Estas respuestas te ayudarán a encontrar el tuyo.' : 'Every project and every person starts somewhere different. These answers will help you find your starting point.'}</p><a href="#contact" className="text-link">{es ? '¿Tienes otra pregunta?' : 'Have another question?'}<ArrowUpRight size={17} /></a></div><div className="faq-list">{items.map(([question, answer]) => <details className="faq-item" key={question}><summary>{question}<Plus size={19} aria-hidden="true" /></summary><p>{answer}</p></details>)}</div></div></section>;
 }

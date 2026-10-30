@@ -1,3 +1,4 @@
+import { SceneBackdrop, SceneHeading } from '../common/SceneElements';
 import { useState } from 'react';
 import { ArrowUpRight, Boxes, Factory, ChartNoAxesCombined } from 'lucide-react';
 import { useLanguage } from '../../context/language';
@@ -16,8 +17,8 @@ export function CaseStudiesSection({ onOpenBooking }: { onOpenBooking: () => voi
     : [['Connected sensors', 'Anomaly detection', 'Predictive maintenance'], ['Demand forecasting', 'Stock planning', 'Coordinated decisions'], ['Integrated data', 'Shared indicators', 'Automated reporting']];
   const icons = [Factory, Boxes, ChartNoAxesCombined];
   const study = caseStudies[active];
-  return <section id="cases" className="section cases-section inverse"><div className="shell">
-    <div className="section-heading"><h2>{es ? 'De la información a una operación inteligente.' : 'From information to intelligent operations.'}</h2><p>{es ? 'Anticipar fallos. Equilibrar inventarios. Ver el negocio completo. Explora estos escenarios ilustrativos de lo que los datos y la IA pueden aportar a tu organización.' : 'Anticipate failures. Balance inventory. See the whole business. Explore these illustrative scenarios of what data and AI can bring to your organization.'}</p></div>
+  return <section id="cases" className="section cases-section inverse"><SceneBackdrop /><div className="shell">
+    <div className="section-heading"><SceneHeading>{es ? 'De la información a una operación inteligente.' : 'From information to intelligent operations.'}</SceneHeading><p>{es ? 'Anticipar fallos. Equilibrar inventarios. Ver el negocio completo. Explora estos escenarios ilustrativos de lo que los datos y la IA pueden aportar a tu organización.' : 'Anticipate failures. Balance inventory. See the whole business. Explore these illustrative scenarios of what data and AI can bring to your organization.'}</p></div>
     <div className="case-selector" role="group" aria-label={es ? 'Explorar casos de uso' : 'Explore use cases'}>{tabs.map((label, index) => {
       const Icon = icons[index];
       return <button id={`case-tab-${index}`} key={label} aria-pressed={active === index} aria-controls="case-showcase" onClick={() => setActive(index)}><Icon size={20} strokeWidth={1.5} />{label}<ArrowUpRight size={16} /></button>;
