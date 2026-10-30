@@ -39,11 +39,11 @@ export function Hero({ onOpenBooking }: { onOpenBooking: () => void }) {
     <div className="hero-atmosphere" aria-hidden="true" />
     <div className="shell hero-layout">
       <div className="hero-copy">
-        <p className="hero-intro" data-intro-reveal="eyebrow"><span aria-hidden="true" />{es ? 'Consultoría de datos, IA e Industria 4.0' : 'Data, AI & Industry 4.0 consulting'}</p>
-        <h1>{(es ? ['La transformación', 'empieza en tus datos.'] : ['Transformation', 'starts with your data.']).map(line => <span className="hero-line-mask" key={line}><span data-intro-line>{line}</span></span>)}</h1>
+        <p className="hero-intro hero-brand-line" data-intro-reveal="eyebrow"><span aria-hidden="true" />{es ? 'Transformación Digital · Consultoría' : 'Digital Transformation · Consulting'}</p>
+        <h1>{(es ? ['INGENIERÍA DEL DATO', 'PARA DAR EL SIGUIENTE PASO'] : ['DATA ENGINEERING', 'TO TAKE THE NEXT STEP']).map(line => <span className="hero-line-mask" key={line}><span data-intro-line>{line}</span></span>)}</h1>
         <p className="hero-description" data-intro-reveal="subtitle">{es ? 'Conectamos datos, inteligencia artificial e ingeniería industrial para transformar cómo decides, cómo trabajas y hasta dónde puede llegar tu negocio.' : 'We connect data, artificial intelligence and industrial engineering to transform how you decide, how you work and how far your business can go.'}</p>
         <div className="hero-actions" data-intro-reveal="cta">
-          <button className="button button-primary" onClick={onOpenBooking}>{es ? 'Hablemos de tu transformación' : 'Let’s talk about your transformation'}<ArrowUpRight size={19} /></button>
+          <button className="button button-primary" onClick={onOpenBooking}>{es ? 'Empezar transformación digital' : 'Start digital transformation'}<ArrowUpRight size={19} /></button>
           <a className="text-link" href="#services">{es ? 'Explorar soluciones' : 'Explore solutions'}<ArrowDown size={17} /></a>
         </div>
         <p className="hero-reassurance" data-intro-reveal="details">{es ? 'Estrategia, desarrollo e implementación. A tu lado en cada etapa.' : 'Strategy, development and implementation. With you at every stage.'}</p>

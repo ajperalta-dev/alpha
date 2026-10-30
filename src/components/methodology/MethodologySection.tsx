@@ -19,7 +19,7 @@ export function MethodologySection() {
     if (focus) refs.current[next]?.focus({ preventScroll: true });
   };
   return <section id="methodology" className="section methodology-section"><SceneBackdrop /><div className="shell">
-    <div className="section-heading"><SceneHeading>{es ? 'Un proceso claro. Un avance tangible.' : 'A clear process. Tangible progress.'}</SceneHeading><p>{es ? 'De entender el problema a poner la solución en marcha. Cuatro fases, una dirección compartida y un entregable concreto en cada etapa.' : 'From understanding the problem to putting the solution to work. Four phases, one shared direction and a concrete deliverable at every stage.'}</p></div>
+    <div className="section-heading"><SceneHeading>{es ? 'Un proceso claro. Un avance tangible' : 'A clear process. Tangible progress'}</SceneHeading><p>{es ? 'De entender el problema a poner la solución en marcha. Cuatro fases, una dirección compartida y un entregable concreto en cada etapa.' : 'From understanding the problem to putting the solution to work. Four phases, one shared direction and a concrete deliverable at every stage.'}</p></div>
     <div className="method-steps" role="group" aria-label={es ? 'Fases del proyecto' : 'Project phases'} onKeyDown={event => {
       const index = refs.current.findIndex(button => button === event.target);
       if (index < 0) return;

@@ -122,7 +122,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
       <button className="icon-button dialog-close" onClick={onClose} disabled={submitting} aria-label={es ? 'Cerrar reserva' : 'Close booking'}><X size={21} /></button>
       <div className="booking-brand"><img src={`/brand/identity-alpha/alpha-isotipo-${isDark ? 'oscuro' : 'claro'}.svg`} alt="ALPHA" /></div>
       {!isSubmitted ? <>
-        <div className="booking-heading"><h2 id="booking-title">{es ? 'Demos el primer paso.' : 'Let’s take the first step.'}</h2><p className="dialog-lead">{es ? 'Una sesión inicial gratuita de 30 minutos para conocer tu reto y explorar cómo ayudarte.' : 'A free 30-minute initial session to understand your challenge and explore how we can help.'}</p></div>
+        <div className="booking-heading"><h2 id="booking-title">{es ? 'Demos el primer paso' : 'Let’s take the first step'}</h2><p className="dialog-lead">{es ? 'Una sesión inicial gratuita de 30 minutos para conocer tu reto y explorar cómo ayudarte.' : 'A free 30-minute initial session to understand your challenge and explore how we can help.'}</p></div>
         <ol className="booking-progress">{steps.map((label, index) => <li key={label} aria-current={step === index + 1 ? 'step' : undefined}><span>{step > index + 1 ? <Check size={12} /> : index + 1}</span>{label}</li>)}</ol>
         <form onSubmit={event => { if (step < 3) { event.preventDefault(); handleNext(); } else void handleSubmit(event); }} noValidate>
           {step === 1 && <div className="form-stack">

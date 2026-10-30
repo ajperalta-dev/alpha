@@ -19,13 +19,13 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.calculator': 'Simulador ROI',
     'nav.cases': 'Casos de uso',
     'nav.contact': 'Contacto',
-    'nav.bookCta': 'Agendar Consultoría',
+    'nav.bookCta': 'Contáctanos',
 
     // Hero Section
     'hero.badge': 'CONSULTORÍA ESTRATÉGICA EN DATA & IA',
     'hero.title.pre': 'Ingeniería del dato para',
-    'hero.title.highlight': 'dar el siguiente paso.',
-    'hero.title.post': 'De la estrategia a la práctica.',
+    'hero.title.highlight': 'dar el siguiente paso',
+    'hero.title.post': 'De la estrategia a la práctica',
     'hero.subtitle': 'Creamos soluciones de datos, inteligencia artificial y automatización. Te acompañamos con consultoría estratégica y tutorías para convertir tus ideas en capacidades reales.',
     'hero.cta.primary': 'Explorar Soluciones',
     'hero.cta.secondary': 'Agendar Sesión Técnica',
@@ -40,7 +40,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Services
     'services.header.badge': 'NUESTRO PORTAFOLIO DE SOLUCIONES',
-    'services.header.title': 'Soluciones para avanzar. Personas para acompañarte.',
+    'services.header.title': 'Soluciones para avanzar. Personas para acompañarte',
     'services.header.desc': 'Desarrollamos soluciones de datos e IA, orientamos tus decisiones y te ayudamos a aprender. Elige el punto de partida que necesitas.',
     'services.filter.all': 'Todas',
     'services.filter.foundational': 'Datos y BI',
@@ -179,13 +179,13 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.calculator': 'ROI Simulator',
     'nav.cases': 'Use cases',
     'nav.contact': 'Contact',
-    'nav.bookCta': 'Book Consultation',
+    'nav.bookCta': 'Contact us',
 
     // Hero Section
     'hero.badge': 'STRATEGIC DATA & AI CONSULTING',
     'hero.title.pre': 'Data and AI for',
-    'hero.title.highlight': 'your next step.',
-    'hero.title.post': 'From strategy to practice.',
+    'hero.title.highlight': 'your next step',
+    'hero.title.post': 'From strategy to practice',
     'hero.subtitle': 'We build data, artificial intelligence and automation solutions. Strategic consulting and personalized tutoring help turn your ideas into practical capabilities.',
     'hero.cta.primary': 'Explore Solutions',
     'hero.cta.secondary': 'Book Technical Session',
@@ -200,7 +200,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Services
     'services.header.badge': 'OUR SOLUTIONS PORTFOLIO',
-    'services.header.title': 'Solutions to move forward. Expertise by your side.',
+    'services.header.title': 'Solutions to move forward. Expertise by your side',
     'services.header.desc': 'We build data and AI solutions, guide your decisions and help you learn. Choose the starting point that fits your goals.',
     'services.filter.all': 'All',
     'services.filter.foundational': 'Data & BI',
