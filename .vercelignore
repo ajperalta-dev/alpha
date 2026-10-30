@@ -1,0 +1,11 @@
+.env
+.env.*
+.git
+.netlify
+.vercel
+.agents
+.codex
+.aws
+node_modules
+logs
+*.log
