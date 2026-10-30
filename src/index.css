@@ -71,7 +71,7 @@ p { text-wrap: pretty; }
 .icon-button:hover:not(:disabled) { background:var(--hover); }
 .text-link { display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:8px 0; min-height:42px; background:none; border:none; font-weight:600; font-size:14px; line-height:1.5; text-align:left; }
 .text-link:hover { opacity:.65; }
-.site-header { position:fixed; inset:0 0 auto; width:100%; z-index:40; background:var(--nav-surface); color:var(--nav-ink); border:0; }
+.site-header { --paper:#000; --ink:#fff; --muted:rgba(255,255,255,.68); --subtle:rgba(255,255,255,.5); --line:rgba(255,255,255,.2); --wash:rgba(255,255,255,.055); --hover:rgba(255,255,255,.1); --nav-surface:#000; --nav-ink:#bdbdbd; position:fixed; inset:0 0 auto; width:100%; z-index:40; background:#000; color:#bdbdbd; border:0; }
 .site-header.is-hidden { opacity:0; visibility:hidden; pointer-events:none; transition:opacity 1.1s ease,visibility 0s linear 1.1s,background 1.1s ease,backdrop-filter 1.1s ease; }
 .nav-row { display:flex; align-items:center; justify-content:space-between; gap:30px; height:72px; transform:translateY(-3px); }
 .brand-home { flex-shrink:0; }

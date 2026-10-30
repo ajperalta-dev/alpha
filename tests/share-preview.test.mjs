@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 
 test('Social preview references the exported ALPHA artwork at an absolute public URL', () => {
   const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
-  const url = 'https://alpha-xi-sand.vercel.app/brand/identity-alpha/alpha-share-favicon.png';
+  const url = 'https://alpha-seven-nu.vercel.app/brand/identity-alpha/alpha-share-favicon.png';
   assert.ok(html.includes(`property="og:image" content="${url}"`));
   assert.ok(html.includes(`name="twitter:image" content="${url}"`));
   const png = readFileSync(new URL('../public/brand/identity-alpha/alpha-share-favicon.png', import.meta.url));

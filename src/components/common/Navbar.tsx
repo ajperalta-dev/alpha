@@ -35,7 +35,7 @@ export function Navbar({ onOpenBooking }: { onOpenBooking: () => void }) {
   const links = [['#services', 'nav.services'], ['#cases', 'nav.cases'], ['#methodology', 'nav.methodology'], ['#contact', 'nav.contact']];
   return <header className={`site-header${hidden && !open ? ' is-hidden' : ''}`} data-intro-reveal="nav">
     <div className="shell nav-row">
-      <a href="#hero" className="brand-home" aria-label={lang === 'es' ? 'ALPHA, inicio' : 'ALPHA, home'} onClick={() => setOpen(false)}><BrandLockup /></a>
+      <a href="#hero" className="brand-home" aria-label={lang === 'es' ? 'ALPHA, inicio' : 'ALPHA, home'} onClick={() => setOpen(false)}><BrandLockup darkSurface /></a>
       <nav className="desktop-nav" aria-label={lang === 'es' ? 'Navegación principal' : 'Main navigation'}>{links.map(([href, key]) => <a key={href} href={href}>{t(key)}</a>)}</nav>
       <div className="nav-actions">
         <button className="language-toggle" onClick={() => setLang(lang === 'es' ? 'en' : 'es')} aria-label={lang === 'es' ? 'Change language to English' : 'Cambiar idioma a español'}>{lang.toUpperCase()}</button>
