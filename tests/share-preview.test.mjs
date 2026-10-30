@@ -4,10 +4,10 @@ import { readFileSync } from 'node:fs';
 
 test('Social preview references the exported ALPHA artwork at an absolute public URL', () => {
   const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
-  const url = 'https://alpha-xi-sand.vercel.app/brand/identity-alpha/alpha-share.png';
+  const url = 'https://alpha-xi-sand.vercel.app/brand/identity-alpha/alpha-share-icon.png';
   assert.ok(html.includes(`property="og:image" content="${url}"`));
   assert.ok(html.includes(`name="twitter:image" content="${url}"`));
-  const png = readFileSync(new URL('../public/brand/identity-alpha/alpha-share.png', import.meta.url));
+  const png = readFileSync(new URL('../public/brand/identity-alpha/alpha-share-icon.png', import.meta.url));
   assert.equal(png.subarray(1, 4).toString(), 'PNG');
   assert.equal(png.readUInt32BE(16), 1200);
   assert.equal(png.readUInt32BE(20), 630);
