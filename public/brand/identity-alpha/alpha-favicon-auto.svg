@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-labelledby="title desc">
+<title id="title">ALPHA · favicon adaptable</title><desc id="desc">Identidad ALPHA. Vectorización de Logotipo_Alpha.png, respetando los contornos de las letras.</desc>
+<style>:root{--disk:#000000;--line:#FFFFFF}@media(prefers-color-scheme:dark){:root{--disk:#FFFFFF;--line:#000000}}</style><g transform="translate(2 2) scale(.109375)"><circle cx="128" cy="128" r="128" fill="var(--disk)"/><path d="M64 84 Q128 108 192 84 A6 6 0 0 1 196 96 Q128 122 60 96 A6 6 0 0 1 64 84 Z" transform="translate(0 0)" fill="var(--line)"/><path d="M64 84 Q128 108 192 84 A6 6 0 0 1 196 96 Q128 122 60 96 A6 6 0 0 1 64 84 Z" transform="translate(0 32)" fill="var(--line)"/><path d="M64 84 Q128 108 192 84 A6 6 0 0 1 196 96 Q128 122 60 96 A6 6 0 0 1 64 84 Z" transform="translate(0 64)" fill="var(--line)"/></g>
+</svg>
